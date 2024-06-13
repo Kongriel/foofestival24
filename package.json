@@ -1,5 +1,5 @@
 {
-  "name": "foofestival24",
+  "name": "foofest1",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,14 +9,21 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.43.2",
+    "@tailwindcss/typography": "^0.5.13",
+    "gsap": "^3.12.5",
+    "hamburger-react": "^2.5.1",
+    "next": "14.2.3",
     "react": "^18",
+    "react-credit-card-flipping": "^1.0.22",
+    "react-credit-cards-2": "^1.0.2",
     "react-dom": "^18",
-    "next": "14.2.3"
+    "react-hook-form": "^7.51.5",
+    "react-router-dom": "^6.23.0",
+    "spotify-web-api-js": "^1.5.2"
   },
   "devDependencies": {
     "postcss": "^8",
-    "tailwindcss": "^3.4.1",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.3"
+    "tailwindcss": "^3.4.1"
   }
 }
