@@ -71,7 +71,7 @@ function Clubjoin() {
       <h1 className="text-4xl md:text-6xl font-bebas font-bold text-center mb-6">JOIN FOOCLUB</h1>
       <p className="text-center font-montserrat text-xl mb-12 w-full max-w-4xl mx-auto">Vil du være helt up to date på FOOFests nyheder og nyeste artistannonceringer? Vil du have mulighed for at deltage i konkurrencer i ny og næ, mens du får adgang til FOO Eventkalenderen hele året rundt? Så tilmeld dig FOOClub!</p>
 
-      <div className="grid grid-cols-1 justify-center sm:grid-cols-2 lg:grid-cols-3 gap-1 mb-12">
+      <div className="grid grid-cols-1 justify-center  sm:grid-cols-2  lg:grid-cols-3 gap-1 mb-12">
         <div className="text-center">
           <p className="font-semibold">ANNONCERING AF ARTISTER</p>
         </div>

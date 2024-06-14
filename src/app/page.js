@@ -34,9 +34,7 @@ export default function Home() {
       <section className="flex justify-center mt-6 mb-24">
         <Knap2 />
       </section>
-      <section>
-        <LiveNow />
-      </section>
+
       <section>
         <Clubjoin />
       </section>

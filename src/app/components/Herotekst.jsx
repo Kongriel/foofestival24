@@ -6,7 +6,7 @@ function Herotekst() {
       <h1 className="font-bebas font-semibold text-bono-10 text-6xl md:text-8xl" style={{ transform: "scaleY(1.1)" }}>
         FooFest'24{" "}
       </h1>
-      <p className="text-bono-10 font-montserrat text-xl ">
+      <p className="text-bono-10 md:text-left font-montserrat text-xl ">
         Vi ses til dans, sang,
         <br />
         kærlighed og magi på

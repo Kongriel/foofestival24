@@ -16,6 +16,7 @@ module.exports = {
       },
       colors: {
         "knap-10": "rgba(54, 69, 77, 0.1)",
+        "knap-20": "#71f34d",
         "bono-10": "#36454D",
         "bono-50": "#384455",
         hovercolor: "#ff0000",

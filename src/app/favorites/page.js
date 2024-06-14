@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import Knap1 from "@/app/components/Knap1";
 
 const FavoritesPage = () => {
   const [favoriteBands, setFavoriteBands] = useState([]);
@@ -24,6 +25,16 @@ const FavoritesPage = () => {
 
     fetchSchedule();
   }, []);
+
+  const dayNames = {
+    mon: "Monday",
+    tue: "Tuesday",
+    wed: "Wednesday",
+    thu: "Thursday",
+    fri: "Friday",
+    sat: "Saturday",
+    sun: "Sunday",
+  };
 
   useEffect(() => {
     if (Object.keys(schedule).length > 0 && favoriteBands.length > 0) {
@@ -80,37 +91,54 @@ const FavoritesPage = () => {
     setFavoriteBands(updatedFavorites);
   };
 
+  const groupedBands = bandSchedules.reduce((acc, band) => {
+    if (!acc[band.day]) {
+      acc[band.day] = [];
+    }
+    acc[band.day].push(band);
+    return acc;
+  }, {});
+
   if (favoriteBands.length === 0) {
     return <div className="flex flex-col items-center justify-center mt-24">No favorite bands added yet.</div>;
   }
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-8">My Favorite Bands</h1>
-      <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {bandSchedules.map((band) => (
-          <li key={band.slug} className="bg-white rounded-lg shadow-lg overflow-hidden">
-            <div className="relative h-64">
-              <Image src={band.logo.startsWith("http") ? band.logo : `/${band.logo}`} alt={`${band.name} logo`} layout="fill" objectFit="cover" />
-            </div>
-            <div className="p-4">
-              <h2 className="text-xl font-bold mb-2">{band.name}</h2>
-              <p className="text-sm text-gray-700 mb-2">{band.genre}</p>
-              <p className="text-sm text-gray-700 mb-2">
-                {band.day.toUpperCase()} {band.start} - {band.end} @ {band.scene}
-              </p>
-              <div className="flex justify-between items-center">
-                <Link href={`/bands/${band.slug}`} passHref className="text-blue-500 hover:text-blue-700">
-                  View Details
-                </Link>
-                <button onClick={() => handleFavoriteClick(band.slug)}>
-                  <Image src={isBandFavorited(band.slug) ? "/heart-filled.svg" : "/heart-empty.svg"} alt="Favorite" width={32} height={32} />
-                </button>
-              </div>
-            </div>
-          </li>
+    <div className="w-full flex justify-center">
+      <div className="w-11/12 md:w-5/6 lg:w-3/4 flex flex-col px-4 py-8">
+        <h1 className="text-4xl md:text-5xl lg:text-7xl text-bono-10 font-bebas text-center mt-10 font-bold mb-8">My Favorite Bands</h1>
+        <div className="flex justify-center mb-14">
+          <Knap1 />
+        </div>
+        {Object.entries(groupedBands).map(([day, bands]) => (
+          <div key={day} className="mb-6">
+            <h2 className="text-m font-bebas bg-knap-10 text-bono-10 font-bold mb-4">{dayNames[day].toUpperCase()}</h2>
+            <ul className="space-y-4">
+              {bands.map((band, index) => (
+                <div key={band.slug}>
+                  <li className="overflow-hidden">
+                    <div className="flex">
+                      <div className="p-4 w-full md:w-3/4">
+                        <h2 className="text-xl font-bold mb-1 text-bono-10">{band.name.toUpperCase()}</h2>
+                        <p className="text-sm font-Konnect text-gray-700 mb-1">
+                          {band.start}, {band.scene.toUpperCase()}
+                        </p>
+                        <button onClick={() => handleFavoriteClick(band.slug)}>
+                          <Image src={isBandFavorited(band.slug) ? "/heart-filled.svg" : "/heart-empty.svg"} alt="Favorite" width={24} height={24} />
+                        </button>
+                      </div>
+                      <div className="relative w-1/4 h-32">
+                        <Image src={band.logo.startsWith("http") ? band.logo : `/${band.logo}`} alt={`${band.name} logo`} layout="fill" objectFit="cover" />
+                      </div>
+                    </div>
+                  </li>
+                  {index < bands.length - 1 && <hr className="my-2 border-b-2 border-knap-10 w-full" />}
+                </div>
+              ))}
+            </ul>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };

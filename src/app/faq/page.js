@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const FaqPage = () => {
   return (
@@ -21,9 +22,9 @@ const FaqPage = () => {
             <h2 className="text-xl text-bono-10 font-semibold font-montserrat">3. Hvordan kan jeg købe billetter?</h2>
             <p className="text-bono-10 font-montserrat">
               Billetter kan købes online via vores officielle hjemmeside{" "}
-              <a href="#" className="text-blue-500 underline font-montserrat">
+              <Link href="/booking" className="text-blue-500 underline font-montserrat">
                 her
-              </a>
+              </Link>
               . Vi tilbyder forskellige billetmuligheder herunder weekend-billetter og VIP-pakker.
             </p>
           </div>
@@ -43,9 +44,9 @@ const FaqPage = () => {
             </ul>
             <p className="text-bono-10 font-montserrat">
               For flere detaljer, besøg vores{" "}
-              <a href="#" className="text-blue-500 underline font-montserrat">
+              <Link href="/booking" className="text-blue-500 underline font-montserrat">
                 Billetter
-              </a>{" "}
+              </Link>{" "}
               side.
             </p>
           </div>
