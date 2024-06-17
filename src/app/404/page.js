@@ -1,6 +1,6 @@
 import React from "react";
 import Image from 'next/image'; 
-import errorImage from '.../'; // Path to your error image
+import errorImage from ''; 
 
 const Error404Page = () => {
   return (
