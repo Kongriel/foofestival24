@@ -97,12 +97,12 @@ const Header = () => {
       </div>
 
       {/* Hamburger Icon */}
-      <div className="flex items-center -mr-6 space-x-3">
+      <div className="flex items-center -mr-4 space-x-3">
         <div className="hidden md:block mr-6">
           <Knap className="hidden md:block" /> {/* Hide on tablet size */}
         </div>
         {/* Empty Heart Icon */}
-        <div className="">
+        <div className="hidden md:block">
           <Link href="/favorites">
             <Image src="/heart-empty.svg" alt="Favorite" width={38} height={38} />
           </Link>
@@ -126,6 +126,9 @@ const Header = () => {
           </div>
           <div onClick={() => (window.location.href = "/Live")} onKeyDown={(e) => handleNavItemKeyDown(e, "/Live")} className="my-2 text-taupe-10 text-4xl cursor-pointer" tabIndex={0} role="link" aria-label="Live Now">
             Live Now
+          </div>
+          <div onClick={() => (window.location.href = "/favorites")} onKeyDown={(e) => handleNavItemKeyDown(e, "/favorites")} className="my-2 text-taupe-10 mt-8  text-4xl cursor-pointer" tabIndex={0} role="link" aria-label="Live Now">
+            Favorites
           </div>
         </div>
       </div>

@@ -3,7 +3,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import SlugLoading from "@/app/components/SlugLoading";
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 import Knap2 from "@/app/components/Knap2";
 
 const BandPage = () => {
@@ -128,17 +129,20 @@ const BandPage = () => {
 
   if (loadingBand || loadingSchedule) {
     return (
-      <div className="flex flex-col mt-12 items-center justify-center">
-        <div className="flex flex-col items-center text-center relative">
-          <div className="flex items-center justify-center  space-x-4 mb-4 mt-32">
-            <SlugLoading width="w-72" height="h-24" extraClass="rounded-full w-76" />
+      <SkeletonTheme className="mt-44" baseColor="rgba(54, 69, 77, 0.1)" highlightColor="white">
+        <main className="items-center mt-44 justify-center my-6">
+          <h1 className="mb-6 mt-12 text-4xl font-extrabold leading-none tracking-tight text-center">
+            <Skeleton width={670} height={70} />
+          </h1>
+          <h2 className="text-center mb-6">
+            <Skeleton width={550} height={40} />
+          </h2>
+
+          <div className="flex flex-col items-center">
+            <Skeleton className="mb-4 rounded-lg" style={{ width: "420px", height: "420px" }} />
           </div>
-          <SlugLoading width="w-64" height="h-64" extraClass="mb-4 mt-8 rounded-xl" />
-          <SlugLoading width="w-3/4" height="h-16" extraClass="mt-4" />
-          <SlugLoading width="w-full" height="h-16" extraClass="mt-6" />
-          <SlugLoading width="w-full" height="h-16" extraClass="mt-6" />
-        </div>
-      </div>
+        </main>
+      </SkeletonTheme>
     );
   }
 

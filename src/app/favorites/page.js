@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Knap1 from "@/app/components/Knap1";
+import LineupKnap from "@/app/components/LineupKnap";
 
 const FavoritesPage = () => {
   const [favoriteBands, setFavoriteBands] = useState([]);
@@ -106,9 +106,9 @@ const FavoritesPage = () => {
   return (
     <div className="w-full flex justify-center">
       <div className="w-11/12 md:w-5/6 lg:w-3/4 flex flex-col px-4 py-8">
-        <h1 className="text-4xl md:text-5xl lg:text-7xl text-bono-10 font-bebas text-center mt-10 font-bold mb-8">My Favorite Bands</h1>
+        <h1 className="text-4xl md:text-5xl lg:text-5xl text-bono-10 font-bebas text-center mt-10 font-bold mb-8">Your Favorite Bands</h1>
         <div className="flex justify-center mb-14">
-          <Knap1 />
+          <LineupKnap />
         </div>
         {Object.entries(groupedBands).map(([day, bands]) => (
           <div key={day} className="mb-6">

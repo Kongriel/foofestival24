@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import LoadingSkeleton from "./LoadingSkeleton";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 function Hero() {
   const [bands, setBands] = useState([]);
@@ -54,9 +53,30 @@ function Hero() {
         <div className="flex justify-center items-center space-x-4">
           {loading ? (
             <>
-              <LoadingSkeleton sizeClass="w-36 h-36 lg:w-80 lg:h-80 md:w-56 md:h-56" />
-              <LoadingSkeleton sizeClass="w-36 h-36 lg:w-80 lg:h-80 md:w-56 md:h-56" />
-              <LoadingSkeleton sizeClass="w-36 h-36 lg:w-80 lg:h-80 md:w-56 md:h-56" />
+              <SkeletonTheme baseColor="rgba(54, 69, 77, 0.1)" highlightColor="#BBD4E0">
+                <main className="flex items-center justify-center my-6">
+                  <div className={`group relative flex justify-center gap-6 text-center cursor-pointer`}>
+                    <div className={`block overflow-hidden rounded-full mx-auto  w-36 h-36 lg:w-80 lg:h-80 md:w-56 md:h-56`}>
+                      <Skeleton circle={true} height={"100%"} />
+                    </div>
+                    <div className="mt-1 md:hidden text-gray-300 text-xs font-semibold  w-24 h-4 mx-auto">
+                      <Skeleton width={"100%"} height={"100%"} />
+                    </div>
+                    <div className={`block overflow-hidden rounded-full mx-auto  w-36 h-36 lg:w-80 lg:h-80 md:w-56 md:h-56`}>
+                      <Skeleton circle={true} height={"100%"} />
+                    </div>
+                    <div className="mt-1 md:hidden text-gray-300 text-xs font-semibold  w-24 h-4 mx-auto">
+                      <Skeleton width={"100%"} height={"100%"} />
+                    </div>
+                    <div className={`block overflow-hidden rounded-full mx-auto  w-36 h-36 lg:w-80 lg:h-80 md:w-56 md:h-56`}>
+                      <Skeleton circle={true} height={"100%"} />
+                    </div>
+                    <div className="mt-1 md:hidden text-gray-300 text-xs font-semibold  w-24 h-4 mx-auto">
+                      <Skeleton width={"100%"} height={"100%"} />
+                    </div>
+                  </div>
+                </main>
+              </SkeletonTheme>
             </>
           ) : (
             firstThree.map((band) => (
