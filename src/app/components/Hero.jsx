@@ -54,25 +54,45 @@ function Hero() {
           {loading ? (
             <>
               <SkeletonTheme baseColor="rgba(54, 69, 77, 0.1)" highlightColor="#BBD4E0">
-                <main className="flex items-center justify-center my-6">
-                  <div className={`group relative flex justify-center gap-6 text-center cursor-pointer`}>
-                    <div className={`block overflow-hidden rounded-full mx-auto  w-36 h-36 lg:w-80 lg:h-80 md:w-56 md:h-56`}>
+                <main className="md:flex items-center justify-center my-6">
+                  {/* Desktop Skeleton Layout */}
+                  <div className="hidden md:flex justify-center gap-6 text-center cursor-pointer">
+                    <div className="block overflow-hidden rounded-full w-36 h-36 lg:w-80 lg:h-80 md:w-56 md:h-56">
                       <Skeleton circle={true} height={"100%"} />
                     </div>
-                    <div className="mt-1 md:hidden text-gray-300 text-xs font-semibold  w-24 h-4 mx-auto">
-                      <Skeleton width={"100%"} height={"100%"} />
-                    </div>
-                    <div className={`block overflow-hidden rounded-full mx-auto  w-36 h-36 lg:w-80 lg:h-80 md:w-56 md:h-56`}>
+
+                    <div className="block overflow-hidden rounded-full w-36 h-36 lg:w-80 lg:h-80 md:w-56 md:h-56">
                       <Skeleton circle={true} height={"100%"} />
                     </div>
-                    <div className="mt-1 md:hidden text-gray-300 text-xs font-semibold  w-24 h-4 mx-auto">
-                      <Skeleton width={"100%"} height={"100%"} />
-                    </div>
-                    <div className={`block overflow-hidden rounded-full mx-auto  w-36 h-36 lg:w-80 lg:h-80 md:w-56 md:h-56`}>
+
+                    <div className="block overflow-hidden rounded-full w-36 h-36 lg:w-80 lg:h-80 md:w-56 md:h-56">
                       <Skeleton circle={true} height={"100%"} />
                     </div>
-                    <div className="mt-1 md:hidden text-gray-300 text-xs font-semibold  w-24 h-4 mx-auto">
-                      <Skeleton width={"100%"} height={"100%"} />
+                  </div>
+
+                  {/* Mobile Skeleton Layout */}
+                  <div className="md:hidden flex flex-col items-center mt-2">
+                    <div className="flex justify-center space-x-4">
+                      <div className="relative">
+                        <div className="block mb-6 overflow-hidden rounded-full w-36 h-36">
+                          <Skeleton circle={true} height={"100%"} />
+                        </div>
+                        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2">
+                          <div className="text-gray-300 text-xs font-semibold w-24 h-4">
+                            <Skeleton width={"100%"} height={"100%"} />
+                          </div>
+                        </div>
+                      </div>
+                      <div className="relative">
+                        <div className="block mb-6 overflow-hidden rounded-full w-36 h-36">
+                          <Skeleton circle={true} height={"100%"} />
+                        </div>
+                        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2">
+                          <div className="text-gray-300 text-xs font-semibold w-24 h-4">
+                            <Skeleton width={"100%"} height={"100%"} />
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </main>
