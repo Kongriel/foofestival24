@@ -85,7 +85,7 @@ const Header = () => {
   };
 
   return (
-    <header className={`fixed top-0 left-0 right-0 flex justify-between rounded-xl bg-knap-10 items-center px-2 h-16 sm:h-20 md:h-24 z-50 text-bono-10 transition-transform duration-300 ${isScrollingUp ? "" : "-translate-y-full"}`}>
+    <header className={` bg-gradient-to-b from-gray-300 to-transparent fixed top-0 left-0 right-0 flex justify-between rounded-xl  items-center px-2 h-16 sm:h-20 md:h-24 z-50 text-bono-10 transition-transform duration-300 ${isScrollingUp ? "" : "-translate-y-full"}`}>
       {/* Welcome Text */}
       <div className="text-xs sm:text-sm md:text-lg text-wrap">Velkommen til FooFest '24</div>
 

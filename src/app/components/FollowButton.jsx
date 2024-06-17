@@ -63,7 +63,7 @@ const FollowButton = ({ isOpen, toggleMenu }) => {
 
   return (
     <button ref={containerRef} onClick={toggleMenu} onKeyDown={handleKeyDown} tabIndex={0} className="z-30 overflow-hidden hover:border-blue-500 flex justify-center items-center relative w-40 h-40 cursor-pointer" aria-label="Toggle Menu">
-      <div ref={circleRef} className="absolute bg-knap-10 h-14 w-14 rounded-full hover:border-blue-500 border-2 border-gray-500 opacity-0">
+      <div ref={circleRef} className="absolute bg-knap-10 h-14 w-14 rounded-full hover:border-blue-500 border border-gray-500 opacity-0">
         {}
       </div>
       <div ref={hamburgerRef} className="absolute text-bono-10 text-5xl" aria-expanded={isOpen} role="button" tabIndex={0}>

@@ -149,6 +149,7 @@ const Tickets = () => {
     const errors = {};
     const nameRegex = /^[a-zA-Z\s]+$/;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const phoneRegex = /^[0-9+()]*$/;
 
     if (regularTickets === 0 && vipTickets === 0) {
       errors.tickets = "At least one ticket must be selected.";
@@ -177,9 +178,19 @@ const Tickets = () => {
     }
     if (!phoneNumber) {
       errors.phoneNumber = "Phone number is required.";
+    } else if (!phoneRegex.test(phoneNumber)) {
+      errors.phoneNumber = "Phone number should contain only +, (), and numbers.";
     }
     setError(errors);
     return Object.keys(errors).length === 0;
+  };
+
+  const handlePhoneNumberChange = (e) => {
+    const value = e.target.value;
+    const phoneRegex = /^[0-9+()]*$/;
+    if (phoneRegex.test(value)) {
+      setPhoneNumber(value);
+    }
   };
 
   const handleNextClick = async (e) => {
@@ -313,7 +324,7 @@ const Tickets = () => {
           {error && error.email && <div className="text-red-500 mb-4 w-full text-center">{error.email}</div>}
           <div className="mb-6 w-full">
             <label className="text-base sm:text-lg text-bono-10">Phone Number</label>
-            <input type="text" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} placeholder="Enter your phone number" className="p-2 border border-gray-300 rounded w-full text-base sm:text-lg" />
+            <input type="text" value={phoneNumber} onChange={handlePhoneNumberChange} placeholder="Enter your phone number" className="p-2 border border-gray-300 rounded w-full text-base sm:text-lg" />
           </div>
           {error && error.phoneNumber && <div className="text-red-500 mb-4 w-full text-center">{error.phoneNumber}</div>}
         </fieldset>

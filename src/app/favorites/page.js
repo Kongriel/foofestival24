@@ -112,7 +112,7 @@ const FavoritesPage = () => {
         </div>
         {Object.entries(groupedBands).map(([day, bands]) => (
           <div key={day} className="mb-6">
-            <h2 className="text-m font-bebas bg-knap-10 text-bono-10 font-bold mb-4">{dayNames[day].toUpperCase()}</h2>
+            <h2 className="text-m font-bebas bg-knap-10 text-bono-10 font-bold pl-4 mb-4">{dayNames[day].toUpperCase()}</h2>
             <ul className="space-y-4">
               {bands.map((band, index) => (
                 <div key={band.slug}>

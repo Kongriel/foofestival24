@@ -14,7 +14,7 @@ const FollowButton = ({ onClick }) => {
 
     const handleMouseEnter = () => {
       gsap.to(container, { duration: 0.3, scale: 1.1 });
-      gsap.to(content, { duration: 0.3, scale: 1.2 });
+      gsap.to(content, { duration: 0.3, scale: 1.1 });
     };
 
     const handleMouseLeave = () => {
@@ -28,8 +28,8 @@ const FollowButton = ({ onClick }) => {
       const relX = e.clientX - rect.left;
       const relY = e.clientY - rect.top;
 
-      const moveX = ((relX - rect.width / 2) / rect.width) * 35;
-      let moveY = ((relY - rect.height / 2) / rect.height) * 35;
+      const moveX = ((relX - rect.width / 2) / rect.width) * 55;
+      let moveY = ((relY - rect.height / 2) / rect.height) * 55;
       moveY = Math.max(Math.min(moveY, 70), -70);
       gsap.to(content, {
         duration: 0.3,

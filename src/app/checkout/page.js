@@ -2,6 +2,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import Cards from "react-credit-cards-2";
 import "react-credit-cards-2/dist/es/styles-compiled.css";
+import confetti from "canvas-confetti";
 
 const PaymentForm = () => {
   const [state, setState] = useState({
@@ -105,6 +106,14 @@ const PaymentForm = () => {
   };
 
   const handleSubmit = (evt) => {
+    setTimeout(() => {
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 },
+      });
+    }, 800);
+
     evt.preventDefault();
     if (state.name && state.number.length === 16 && state.expiry.length === 4 && state.cvc.length === 3) {
       confirmReservation();

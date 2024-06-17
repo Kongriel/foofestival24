@@ -4,7 +4,7 @@ import { useParams } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import SlugLoading from "@/app/components/SlugLoading";
-import Knap from "@/app/components/Knap";
+import Knap2 from "@/app/components/Knap2";
 
 const BandPage = () => {
   const [band, setBand] = useState(null);
@@ -220,7 +220,7 @@ const BandPage = () => {
         )}
       </div>
       <div className="mt-40 mb-20 text-bono-10">
-        <Knap />
+        <Knap2 />
       </div>
 
       {/* New section to display similar bands */}

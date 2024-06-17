@@ -21,7 +21,7 @@ function Card({ title, status, subtitle, price, ticketType }) {
       <div className="bg-knap-10 p-6 transition-all duration-200 ease-in-out hover:border-blue-500 focus:border-blue-500 hover:ring-2 focus:ring-2 hover:ring-blue-500 focus:ring-blue-500 focus:outline-none border-2 border-transparent rounded-xl shadow-xl max-w-sm mx-auto cursor-pointer group" onMouseEnter={() => setTextStrokeColor("black")} onMouseLeave={() => setTextStrokeColor("#007bff")} onFocus={() => setTextStrokeColor("black")} onBlur={() => setTextStrokeColor("#007bff")} tabIndex="0" onClick={handleClick}>
         <div className="text-center">
           <h1 className="text-2xl mt-6 mb-10 font-bold font-bebas text-gray-600">{title}</h1>
-          <h2 className="text-6xl mt-12 mb-4 font-bebas font-bold text-blue-800" style={outlineStyle}>
+          <h2 className="text-6xl mt-12 mb-4 font-bebas font-bold " style={outlineStyle}>
             FOO'24 <br /> ALL WEEK
           </h2>
           <p className="mt-2 font-semibold font-bebas text-black">{status} TICKET</p>
