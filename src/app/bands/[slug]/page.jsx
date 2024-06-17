@@ -128,18 +128,20 @@ const BandPage = () => {
   }, [band]);
 
   if (loadingBand || loadingSchedule) {
+    const isMobile = window.innerWidth <= 768;
+
     return (
       <SkeletonTheme className="mt-44" baseColor="rgba(54, 69, 77, 0.1)" highlightColor="white">
         <main className="items-center mt-44 justify-center my-6">
           <h1 className="mb-6 mt-12 text-4xl font-extrabold leading-none tracking-tight text-center">
-            <Skeleton width={670} height={70} />
+            <Skeleton width={isMobile ? 400 : 670} height={70} />
           </h1>
           <h2 className="text-center mb-6">
-            <Skeleton width={550} height={40} />
+            <Skeleton width={isMobile ? 300 : 550} height={40} />
           </h2>
 
           <div className="flex flex-col items-center">
-            <Skeleton className="mb-4 rounded-lg" style={{ width: "420px", height: "420px" }} />
+            <Skeleton className="mb-4 rounded-lg" style={{ width: isMobile ? "320px" : "420px", height: isMobile ? "320px" : "420px" }} /> {/* Adjusted width and height based on isMobile */}
           </div>
         </main>
       </SkeletonTheme>
