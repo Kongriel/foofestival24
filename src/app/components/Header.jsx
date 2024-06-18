@@ -102,7 +102,7 @@ const Header = () => {
           <Knap className="hidden md:block" /> {/* Hide on tablet size */}
         </div>
         {/* Empty Heart Icon */}
-        <div className="hidden md:block">
+        <div className="hidden md:block hover:scale-110">
           <Link href="/favorites">
             <Image src="/heart-empty.svg" alt="Favorite" width={38} height={38} />
           </Link>

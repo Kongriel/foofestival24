@@ -101,7 +101,7 @@ function Hero() {
           ) : (
             firstThree.map((band) => (
               <Link key={band.slug} href={`/bands/${band.slug}`}>
-                <div className="group relative text-center cursor-pointer">
+                <div className="group relative text-center cursor-pointer ">
                   <div className="block w-36 h-36 lg:w-80 lg:h-80 md:w-56 md:h-56 overflow-hidden rounded-full mx-auto border-4 border-transparent border-white hover:border-blue-600 hover:-rotate-8 transition-all duration-200 ease-in-out transform hover:scale-105">
                     <Image src={band.logo.startsWith("https") ? band.logo : `/${band.logo}`} alt={band.name} layout="fill" objectFit="cover" className="rounded-full group-hover:opacity-50 transition-opacity duration-200 ease-in-out" />
                     <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200 ease-in-out">
