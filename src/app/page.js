@@ -1,18 +1,14 @@
 "use client";
 
 import React from "react";
-
 import Hero from "./components/Hero";
 import Herotekst from "./components/Herotekst";
 import Knap1 from "./components/Knap1";
 import Centertext from "./components/Centertext";
 import Card from "./components/Card";
-
 import Sponsor from "./components/Sponsor";
-
 import Clubjoin from "./components/Clubjoin";
 import Knap2 from "./components/Knap2";
-import LiveNow from "./components/LiveNow";
 
 export default function Home() {
   return (
