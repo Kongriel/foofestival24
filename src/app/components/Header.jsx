@@ -76,6 +76,7 @@ const Header = () => {
     };
   }, [navRef, hamburgerRef]);
 
+  /* nedenstående kode er tabbing a11y */
   const handleNavItemKeyDown = (e, href) => {
     if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
